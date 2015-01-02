@@ -125,6 +125,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Git autocompletion
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export GIT_PS1_SHOWDIRTYSTATE=1
