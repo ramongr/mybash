@@ -7,6 +7,15 @@ function gitclean(){
   git checkout develop && git branch --merged | grep -v develop | xargs git branch -d
 }
 
+export -f gitclean
+
+# Prunes branches
+function gitprune(){
+  git remote | xargs -n1 git remote prune
+}
+
+export -f gitprune
+
 
 # Removes orig files from your project
 function unorig() {
